@@ -1,0 +1,30 @@
+/* App.css */
+.main-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+}
+
+/* Sidebar styles */
+.main-container > :first-child {
+  flex: 0 0 250px; /* Fixed sidebar width */
+}
+
+/* About section styles */
+.main-container > :last-child {
+  flex: 1;
+  min-width: 300px; /* Prevents it from shrinking too much */
+}
+
+/* Mobile view (stacked) */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .main-container > :first-child {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
