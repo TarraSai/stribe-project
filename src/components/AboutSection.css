@@ -97,3 +97,10 @@
   display: block;
   margin: 0 auto 20px;
 }
+
+/* Hide image on small screens */
+@media (max-width: 767.98px) {
+  .about-image {
+    display: none;
+  }
+}

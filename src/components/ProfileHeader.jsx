@@ -63,6 +63,7 @@ export default function ProfileHeader() {
             </li>
             <li className="nav-item me-2">
               <i className={`bi bi-question-circle ${iconTextColor}`} style={{ fontSize: "1.2rem" }}></i>
+              <span className={`ms-2 d-lg-none ${iconTextColor}`}>Help</span>
             </li>
             
             {/* Heart Icon */}
@@ -75,6 +76,7 @@ export default function ProfileHeader() {
                 }}
                 onClick={() => setHeartActive(!isHeartActive)}
               ></i>
+              <span className={`ms-2 d-lg-none ${iconTextColor}`}>Wishlist</span>
             </li>
 
             {/* Bell Icon */}
@@ -87,6 +89,7 @@ export default function ProfileHeader() {
                 }}
                 onClick={() => setBellActive(!isBellActive)}
               ></i>
+              <span className={`ms-2 d-lg-none ${iconTextColor}`}>Notifications</span>
             </li>
             <li className="nav-item ms-lg-3">
               <img
@@ -95,6 +98,7 @@ export default function ProfileHeader() {
                 className="rounded-circle"
                 style={{ width: "32px", height: "32px", objectFit: "cover" }}
               />
+              <span className={`ms-2 d-lg-none ${iconTextColor}`}>Profile</span>
             </li>
          
             <li className="nav-item ms-lg-3 d-none d-lg-block">
