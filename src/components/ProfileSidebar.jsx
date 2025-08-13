@@ -11,8 +11,7 @@ export default function ProfileSidebar() {
         backgroundColor: "#f8f9fa"    
       }}
     >
-      <div className="p-4 bg-white shadow-sm rounded text-center">
-        {/* Profile Image */}
+      <div className="p-4 bg-body shadow-sm rounded text-center">
         <img
           src="https://tse4.mm.bing.net/th/id/OIP.Ez46LhLCvyiFcF3BYWWrGQAAAA?w=437&h=532&rs=1&pid=ImgDetMain&o=7&rm=3"
           alt="Profile"
@@ -20,46 +19,43 @@ export default function ProfileSidebar() {
           style={{ width: '100px', height: '100px', objectFit: 'cover', border: '2px solid #007bff' }}
         />
 
-        {/* Name & Role */}
         <h5 className="fw-bold mb-1">Alex Johnson</h5>
-        <span className="badge bg-light text-primary px-3 py-1 mb-2 fw-semibold">
+        <span className="badge bg-body-tertiary text-primary px-3 py-1 mb-2 fw-semibold">
           AVAILABLE IN 2 - 4 WEEKS
         </span>
-        <p className="text-muted mb-4">Senior UI/UX Designer @ Greenhouse</p>
+        <p className="text-body-secondary mb-4">Senior UI/UX Designer @ Greenhouse</p>
 
-        {/* Details List */}
         <ul className="list-unstyled text-start small mb-4">
           <li className="d-flex align-items-center mb-3">
-            <FaUserTie className="text-secondary me-2" />
+            <FaUserTie className="text-body-secondary me-2" />
             <div>
               <div className="fw-semibold">Senior</div>
-              <small className="text-muted">Seniority</small>
+              <small className="text-body-secondary">Seniority</small>
             </div>
           </li>
           <li className="d-flex align-items-center mb-3">
-            <FaMapMarkerAlt className="text-secondary me-2" />
+            <FaMapMarkerAlt className="text-body-secondary me-2" />
             <div>
               <div className="fw-semibold">GMT+02:00, Barcelona, Spain</div>
-              <small className="text-muted">Location & Timezone</small>
+              <small className="text-body-secondary">Location & Timezone</small>
             </div>
           </li>
           <li className="d-flex align-items-center mb-3">
-            <FaEuroSign className="text-secondary me-2" />
+            <FaEuroSign className="text-body-secondary me-2" />
             <div>
               <div className="fw-semibold">€60-80/hour</div>
-              <small className="text-muted">Average Hourly Rate</small>
+              <small className="text-body-secondary">Average Hourly Rate</small>
             </div>
           </li>
           <li className="d-flex align-items-center mb-3">
-            <FaLanguage className="text-secondary me-2" />
+            <FaLanguage className="text-body-secondary me-2" />
             <div>
               <div className="fw-semibold">Spanish, English</div>
-              <small className="text-muted">Languages</small>
+              <small className="text-body-secondary">Languages</small>
             </div>
           </li>
         </ul>
 
-        {/* Buttons */}
         <button className="btn btn-success w-100 rounded-pill mb-2 fw-semibold">
           Hire Alex
         </button>
@@ -67,7 +63,6 @@ export default function ProfileSidebar() {
           Add to Wishlist
         </button>
 
-        {/* Top Skills Section */}
         <div className="text-start">
           <h6 className="fw-bold mb-3">Top Skills</h6>
           <div className="d-flex flex-wrap gap-2">

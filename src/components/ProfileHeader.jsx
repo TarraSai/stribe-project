@@ -1,15 +1,21 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useTheme } from '../context/useTheme';
+import './ProfileHeader.css';
 
 export default function ProfileHeader() {
-    const [isHeartActive, setHeartActive] = useState(false);
+  const [isHeartActive, setHeartActive] = useState(false);
   const [isBellActive, setBellActive] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav className="navbar navbar-expand-lg bg-body shadow-sm">
       <div className="container-fluid">
-       
+        {/* Search Icon visible on small screens */}
+        <span className="d-lg-none d-flex align-items-center me-3">
+          <i className="bi bi-search text-body-emphasis" style={{ fontSize: "1.4rem" }}></i>
+        </span>
 
         {/* Toggler Button */}
         <button
@@ -26,10 +32,10 @@ export default function ProfileHeader() {
 
         {/* Collapsible Menu */}
         <div className="collapse navbar-collapse" id="navbarContent">
-          {/* Search Bar */}
+          {/* Search Bar (visible on large screens) */}
           <form
-            className="d-flex my-2 my-lg-0 me-auto"
-            style={{ maxWidth: "400px", marginLeft: "20px" ,border: "2px solid #007bff", borderRadius: "50px" }}
+            className="d-none d-lg-flex my-2 my-lg-0 me-auto"
+            style={{ maxWidth: "400px", marginLeft: "20px", border: "2px solid #007bff", borderRadius: "50px" }}
           >
             <input
               className="form-control rounded-pill ps-3"
@@ -42,15 +48,25 @@ export default function ProfileHeader() {
           {/* Right Side Items */}
           <ul className="navbar-nav ms-auto align-items-lg-center mt-2 mt-lg-0">
             <li className="nav-item me-lg-3">
-              <span>My engagements</span>
+              <span className="text-body-emphasis">My engagements</span>
             </li>
             <li className="nav-item me-lg-3">
-              <i className="bi bi-question-circle" style={{ fontSize: "1.2rem" }}></i>
+              <i className="bi bi-question-circle text-body-emphasis" style={{ fontSize: "1.2rem" }}></i>
             </li>
+            {/* Redesigned Theme Toggle Button */}
+            <li className="nav-item me-lg-3">
+                <button 
+                    className={`btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center theme-toggle-btn text-${theme === 'light' ? 'white' : 'dark'} bg-${theme === 'light' ? 'dark' : 'white'}`}
+                    onClick={toggleTheme}>
+                    <i className={`bi ${theme === 'light' ? 'bi-moon' : 'bi-sun'}`} style={{ fontSize: "1rem" }}></i>
+                    <span className="ms-2">{theme === 'light' ? 'Dark' : 'Light'}</span>
+                </button>
+            </li>
+            
             {/* Heart Icon */}
             <li className="nav-item me-lg-3">
               <i
-                className={`bi bi-heart${isHeartActive ? "-fill" : ""} heart-icon`}
+                className={`bi bi-heart${isHeartActive ? "-fill" : ""} heart-icon text-body-emphasis`}
                 style={{
                   fontSize: "1.4rem",
                   color: isHeartActive ? "pink" : "inherit",
@@ -63,7 +79,7 @@ export default function ProfileHeader() {
             {/* Bell Icon */}
             <li className="nav-item me-lg-3">
               <i
-                className={`bi bi-bell${isBellActive ? "-fill" : ""} bell-icon`}
+                className={`bi bi-bell${isBellActive ? "-fill" : ""} bell-icon text-body-emphasis`}
                 style={{
                   fontSize: "1.4rem",
                   color: isBellActive ? "black" : "inherit",

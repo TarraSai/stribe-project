@@ -20,3 +20,24 @@
   75% { transform: rotate(6deg); }
   100% { transform: rotate(0deg); }
 }
+
+/* Theme Toggle Button Glow Effect */
+.theme-toggle-btn {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.theme-toggle-btn:hover {
+  filter: brightness(1.1);
+}
+
+.theme-toggle-btn:focus,
+.theme-toggle-btn:active {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+[data-bs-theme="dark"] .theme-toggle-btn:focus,
+[data-bs-theme="dark"] .theme-toggle-btn:active {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}

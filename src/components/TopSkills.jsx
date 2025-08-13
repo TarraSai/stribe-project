@@ -11,9 +11,9 @@ const data = [
 
 export default function TopSkills() {
   return (
-    <div className="p-4 bg-white rounded shadow-sm">
+    <div className="p-4 bg-body rounded shadow-sm">
       <h5 className="fw-bold mb-1">Top skills</h5>
-      <small className="text-muted d-block mb-4">Verified by</small>
+      <small className="text-body-secondary d-block mb-4">Verified by</small>
 
       <div className="d-flex flex-wrap align-items-center">
         {/* Chart */}
@@ -44,7 +44,7 @@ export default function TopSkills() {
             }}
           >
             <h5 className="fw-bold mb-0">{data.length}</h5>
-            <small className="text-muted">SKILLS</small>
+            <small className="text-body-secondary">SKILLS</small>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default function TopSkills() {
                   {skill.name} — {skill.years} years
                 </span>
               </div>
-              <span className="text-muted small">{skill.value}%</span>
+              <span className="text-body-secondary small">{skill.value}%</span>
             </div>
           ))}
         </div>

@@ -1,3 +1,4 @@
+// src/components/AboutSection.jsx
 import React, { useState } from "react";
 import "./AboutSection.css"; 
 
@@ -16,7 +17,6 @@ export default function AboutSection() {
 
   return (
     <div className="about-container">
-      {/* Tabs */}
       <div className="tabs">
         {tabs.map((tab) => (
           <button
