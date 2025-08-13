@@ -2,3 +2,7 @@ body {
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
 }
+
+[data-bs-theme="dark"] body {
+  background-color: #1a1e21; /* A very dark gray instead of pure black */
+}

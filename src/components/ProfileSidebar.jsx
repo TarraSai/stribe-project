@@ -1,14 +1,17 @@
 import React from 'react';
 import { FaUserTie, FaMapMarkerAlt, FaEuroSign, FaLanguage } from "react-icons/fa";
+import { useTheme } from '../context/useTheme.js';
 
 export default function ProfileSidebar() {
+  const { theme } = useTheme();
+
   return (
     <div 
       style={{
-        border: "8px solid white",
-        borderRadius: "20px",        
-        padding: "15px",              
-        backgroundColor: "#f8f9fa"    
+        border: "1px solid white",
+        borderRadius: "10px",        
+        padding: "4px",              
+        backgroundColor: theme === 'light' ? "#f8f9fa" : "#343a40"
       }}
     >
       <div className="p-4 bg-body shadow-sm rounded text-center">
@@ -16,11 +19,11 @@ export default function ProfileSidebar() {
           src="https://tse4.mm.bing.net/th/id/OIP.Ez46LhLCvyiFcF3BYWWrGQAAAA?w=437&h=532&rs=1&pid=ImgDetMain&o=7&rm=3"
           alt="Profile"
           className="rounded-circle mb-3"
-          style={{ width: '100px', height: '100px', objectFit: 'cover', border: '2px solid #007bff' }}
+          style={{ width: '100px', height: '100px', objectFit: 'cover', border: '4px solid green' }}
         />
 
         <h5 className="fw-bold mb-1">Alex Johnson</h5>
-        <span className="badge bg-body-tertiary text-primary px-3 py-1 mb-2 fw-semibold">
+        <span className="badge bg-body-tertiary text-success px-3 py-1 mb-2 fw-semibold">
           AVAILABLE IN 2 - 4 WEEKS
         </span>
         <p className="text-body-secondary mb-4">Senior UI/UX Designer @ Greenhouse</p>
@@ -56,21 +59,23 @@ export default function ProfileSidebar() {
           </li>
         </ul>
 
-        <button className="btn btn-success w-100 rounded-pill mb-2 fw-semibold">
+        <button className={`btn w-100 rounded-pill mb-2 fw-semibold ${theme === 'dark' ? 'btn-success' : 'btn-success'}`}>
           Hire Alex
         </button>
-        <button className="btn btn-outline-secondary w-100 rounded-pill fw-semibold mb-4">
+        <button 
+          className={`btn ${theme === 'dark' ? 'btn-outline-light' : 'btn-outline-secondary'} w-100 rounded-pill fw-semibold mb-4`}
+        >
           Add to Wishlist
         </button>
 
         <div className="text-start">
           <h6 className="fw-bold mb-3">Top Skills</h6>
           <div className="d-flex flex-wrap gap-2">
-            <span className="badge bg-primary text-white px-3 py-2">UI/UX Design</span>
-            <span className="badge bg-warning text-dark px-3 py-2">React</span>
+            <span className="badge bg-success text-white px-3 py-2">UI/UX Design</span>
+            <span className="badge bg-success text-white px-3 py-2">React</span>
             <span className="badge bg-success text-white px-3 py-2">Prototyping</span>
-            <span className="badge bg-info text-dark px-3 py-2">Wireframing</span>
-            <span className="badge bg-danger text-white px-3 py-2">Figma</span>
+            <span className="badge bg-success text-white px-3 py-2">Wireframing</span>
+            <span className="badge bg-success text-white px-3 py-2">Figma</span>
           </div>
         </div>
       </div>
